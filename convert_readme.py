@@ -14,7 +14,7 @@ Message Madhav/Abhinav if you have any doubts regarding any programs or if you h
 ### (chapter_name)
 </summary>
 
-((chapters))
+(chapters)
 
 </details>
 """
@@ -39,7 +39,7 @@ def generate_chapter_list(directory):
             improved_name = file.split(".")[0].capitalize()
             description = extract_description(os.path.join(directory, file))
             improved_name += f" - {description}"
-            chapters.append(improved_name + f"[{default_url+file}]")
+            chapters.append(f"[{improved_name}]" + f"({default_url+directory.split(".")[1]+f"/{file}"})")
 
     
     return sorted(chapters) 
